@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="/login.css"> <!-- Include your shared CSS -->
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">Admin Dashboard</div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="content-container">
+            <div class="intro-text">
+                <h1>Admin Login</h1>
+                <p>Please enter your credentials to access the admin panel.</p>
+            </div>
+            <div class="action-section">
+                <form action="/login" method="POST">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required placeholder="Enter username">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Enter password">
+                    </div>
+                    <button type="submit" class="primary-button">Login</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            Admin Dashboard &copy; 2025
+        </div>
+    </footer>
+</body>
+</html>
