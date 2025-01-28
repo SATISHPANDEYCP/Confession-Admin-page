@@ -23,7 +23,12 @@ router.post("/login", (req, res) => {
         req.session.isAuthenticated = true;
         res.redirect("/admin/chats");
     } else {
-        res.status(401).send("Invalid credentials. Please try again.");
+        return res.status(401).render("wrong.ejs", {
+            msg: {
+                m1: "Oops! Invalid credentials",
+                m2: "Please verify the details and try again with the correct information."
+            }
+        });
     }
 });
 
