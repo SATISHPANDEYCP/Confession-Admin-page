@@ -36,21 +36,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    flex-direction: column;
     min-height: 80vh;
     padding: 2rem;
+    margin-top: 20px;
 }
 
-.content-container {
+.content-container-1,.content-container-2 {
     display: flex;
     flex-direction: column;
+    min-height: 50vh;
     align-items: center;
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 2rem;
-    width: 100%;
+    width: 95%;
     max-width: 1200px;
+    margin-top: 20px;
 }
+
 
 .chat-list {
     display: flex;
@@ -130,6 +135,21 @@ body {
     margin-top: 10px;
 }
 
+.actions-approved {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.secondary-button-approved {
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 .primary-button,
 .secondary-button {
     padding: 10px;
@@ -160,6 +180,17 @@ body {
     color: white;
 }
 
+.secondary-button-approved {
+    background-color: white;
+    color: #4a90e2;
+    border: 2px solid #4a90e2;
+}
+
+.secondary-button-approved:hover {
+    background-color: #4a90e2;
+    color: white;
+}
+
 .footer {
     background-color: #333;
     color: white;
@@ -186,4 +217,45 @@ body {
 
 .pbutton:hover {
     background-color: #2b78cf;
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main {
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .content-container-1, 
+    .content-container-2 {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .chat-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chat-item {
+        flex: 1 1 100%;
+        width: 90%;
+    }
+
+    .chat-box {
+        height: auto;
+        padding: 15px;
+    }
+
+    .primary-button,
+    .secondary-button,
+    .secondary-button-approved {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
 }

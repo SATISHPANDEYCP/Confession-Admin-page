@@ -20,14 +20,14 @@ body {
 }
 
 .header .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
 }
 
 .main {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     min-height: 80vh;
     padding: 2rem;
 }
@@ -38,26 +38,32 @@ body {
     align-items: center;
     background: white;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 2rem;
     width: 100%;
-    max-width: 400px;
+    max-width: 380px;
+}
+
+.intro-text {
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .intro-text h1 {
     color: #4a90e2;
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .intro-text p {
-    color: #555;
-    margin-bottom: 1.5rem;
+    color: #666;
+    font-size: 1rem;
 }
 
 .input-group {
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    position: relative;
 }
 
 .input-group label {
@@ -65,36 +71,57 @@ body {
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: #333;
+    font-size: 0.95rem;
 }
 
 .input-group input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 8px;
     box-sizing: border-box;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 .input-group input:focus {
     border-color: #4a90e2;
     outline: none;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
 }
 
+/* Button Styling */
 .primary-button {
-    background-color: #4a90e2;
+    background: linear-gradient(135deg, #4a90e2, #357abd);
     color: white;
-    padding: 10px 20px;
+    padding: 12px;
     font-size: 1rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     width: 100%;
+    transition: all 0.3s ease;
+    font-weight: bold;
 }
 
 .primary-button:hover {
-    background-color: #357abd;
+    background: linear-gradient(135deg, #357abd, #2a6ca3);
+    transform: scale(1.03);
+}
+
+@media (max-width: 480px) {
+    .content-container {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+
+    .intro-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .intro-text p {
+        font-size: 0.95rem;
+    }
 }
 
 .footer {
@@ -102,6 +129,7 @@ body {
     color: white;
     padding: 1rem 0;
     text-align: center;
+    margin-top: 1rem;
 }
 
 .footer .container {

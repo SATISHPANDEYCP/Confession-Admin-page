@@ -17,7 +17,8 @@ function isAuthenticated(req, res, next) {
 router.get("/chats",isAuthenticated, async (req, res) => {
     try {
         const unapprovedChats = await chat.find({ approved: false }).sort({ created_at: -1 });
-        res.render("admin", { chats: unapprovedChats });
+        const approvedMassage = await chat.find({ approved: true }).sort({ created_at: -1 });
+        res.render("admin", { chats: unapprovedChats, massage:approvedMassage });
     } catch (error) {
         console.error("Error fetching unapproved chats:", error);
         res.status(500).send("An error occurred while retrieving unapproved chats.");

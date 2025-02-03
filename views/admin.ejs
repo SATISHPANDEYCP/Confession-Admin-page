@@ -15,12 +15,13 @@
             <form action="/logout" method="GET">
                 <button class="pbutton" type="submit">Logout</button>
             </form>
-            
+
         </div>
     </header>
 
     <main class="main">
-        <div class="content-container">
+        <!-- Pending massages -->
+        <div class="content-container-1">
             <h1>Pending Chats</h1>
             <div class="chat-list">
                 <% if (chats.length> 0) { %>
@@ -54,6 +55,40 @@
                         <% }); %>
                             <% } else { %>
                                 <p>No pending chats to approve.</p>
+                                <% } %>
+            </div>
+        </div>
+        <!-- Approved Massages -->
+        <div class="content-container-2">
+            <h1>Approved Chats</h1>
+            <div class="chat-list">
+                <% if (massage.length> 0) { %>
+                    <% massage.forEach(msg=> { %>
+                        <div class="chat-item">
+                            <div class="chat-box">
+                                <div class="chat-message">
+                                    <p>
+                                        <%= msg.message %>
+                                    </p>
+                                </div>
+                                <div class="date-time">
+                                    <p class="time">Time: <%= msg.created_at.toString().split(" ")[4] %></p>
+                                    <p>Date: <%= msg.created_at.toString().split(" ").slice(0, 4).join(" ") %></p>
+                                </div>
+                                <div class=" status">
+                                            <p class="pending-text">Approved</p>
+                                </div>
+                                <div class="actions-Approved">
+                                    <form method="POST" action="/admin/chats/<%= msg._id %>/delete"
+                                        style="display: inline;">
+                                        <button type="submit" class="secondary-button-approved ">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <% }); %>
+                            <% } else { %>
+                                <p>No Approved massage.</p>
                                 <% } %>
             </div>
         </div>
